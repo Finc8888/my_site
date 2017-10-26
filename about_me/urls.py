@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^$', main),
     url(r'^work/', work),
     url(r'^study/', study),
+    url(r'^bonus/', bonus),
 ]

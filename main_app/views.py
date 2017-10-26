@@ -8,3 +8,5 @@ def study(request):
 	return(render_to_response("study.html"))
 def work(request):
 	return(render_to_response("work.html"))
+def bonus(request):
+	return(render_to_response("bonus.html"))
