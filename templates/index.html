@@ -1,13 +1,14 @@
+{%load staticfiles%}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
 	<!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
 	<title>Клевый сайт</title>
-	<link rel="stylesheet" href="/static/css/normalize.css">
+	<link rel="stylesheet" href="{% static 'css/normalize.css'%}">
 	<link href="https://fonts.googleapis.com/css?family=Merriweather|Roboto" rel="stylesheet">
 	<!-- <link href="/static/css/css/bootstrap.min.css" rel="stylesheet"> -->
-	<link rel="stylesheet" href="/static/css/style.css">
+	<link rel="stylesheet" href="{% static 'css/style.css'%}">
 </head>
 <body>
 
@@ -26,7 +27,7 @@
 		</div>
 		<div class="content">
 			<!-- <div class="welcome"><h1>Добро пожаловать на хитовый сайт!</h1></div> -->
-			<div class="foto"><img src="/static/img/Its_me.png" alt="Упс" title="Фото"></div>
+			<div class="foto"><img src="{% static 'img/Its_me.png'%}" alt="Упс" title="Фото"></div>
 			<p class="content_name">Владимир <br> Приходько</p>
 			<!-- <hr> -->
 			<p class="content_info">Хобби: Программирование, радиодело, занятие спортом<br>
@@ -36,11 +37,11 @@
 	</div>
 	<div class="footer">
 		<div class="icon">
-			<img src="/static/img/facebook.png" alt="facebook" title="Facebook">
-			<img src="/static/img/twitter.png" alt="twitter" title="Twitter">
-			<img src="/static/img/youtube.png" alt="youtube" title="Youtube">
-			<img src="/static/img/pinterest.png" alt="pinterest" title="Pinterest">
-			<img src="/static/img/insta.png" alt="instagram" title="Instagram">
+			<img src="{% static 'img/facebook.png'%}" alt="facebook" title="Facebook">
+			<img src="{% static 'img/twitter.png'%}" alt="twitter" title="Twitter">
+			<img src="{% static 'img/youtube.png'%}" alt="youtube" title="Youtube">
+			<img src="{% static 'img/pinterest.png'%}" alt="pinterest" title="Pinterest">
+			<img src="{% static 'img/insta.png'%}" alt="instagram" title="Instagram">
 		</div>
 		<p>&#169; &laquo;Все права защищены&#187;</p>
 		
