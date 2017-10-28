@@ -21,7 +21,17 @@
 		</div>
 		<div class="content">
 			<div class="foto"><img src="/static/img/work.jpg" alt="Упс" title="Фото"></div>
-			<p class="content_info">Моя будущая работа </p>
+			<p class="content_name">Места моей будущей работы </p>
+			<ul>
+			{% if place_work %}
+				{% for work in place_work %}
+				<li class="content_info">{{work}}</li>
+			{%endfor%}
+			{%else%}
+				<p class="content_info">Неопределился с будущей работой</p>
+			{% endif %}
+			</ul>
+			
 		</div>
 		<div class="clr"></div>
 		</div>
