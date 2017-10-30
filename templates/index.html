@@ -1,57 +1,28 @@
-{%load staticfiles%}
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-	<meta charset="UTF-8">
-	<!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
-	<title>Клевый сайт</title>
-	<link rel="stylesheet" href="{% static 'css/normalize.css'%}">
-	<link href="https://fonts.googleapis.com/css?family=Merriweather|Roboto" rel="stylesheet">
-	<!-- <link href="/static/css/css/bootstrap.min.css" rel="stylesheet"> -->
-	<link rel="stylesheet" href="{% static 'css/style.css'%}">
-</head>
-<body>
+{% extends "base.html" %}
+{% load staticfiles %}
 
+{% block menu %}
 
-<div class="all">
-	<div class="container">
-		<div class="header">
-		<ul class="list">
-				<li><div class="menu"><a href="/study">Учеба</a></div class="menu"></li>
-				<li><div class="menu"><a href="/work">Работа</a></div></li>
-				<li><div class="menu"><a href="/bonus">Бонус</a></div></li>
-		</ul>	
+	<li><div class="menu"><a href="/study">Учеба</a></div class="menu"></li>
+	<li><div class="menu"><a href="/work">Работа</a></div></li>
+	<li><div class="menu"><a href="/bonus">Бонус</a></div></li>
+{% endblock %}
 
-		
-		<!-- <p>Привет! Это мой личный сайт:)</p> -->
-		</div>
-		<div class="content">
-			<!-- <div class="welcome"><h1>Добро пожаловать на хитовый сайт!</h1></div> -->
-			<div class="foto"><img src="{% static 'img/Its_me.png'%}" alt="Упс" title="Фото"></div>
-			<p class="content_name">{{name}} <br> {{second_name}}</p>
-			<!-- <hr> -->
-			<p class="content_info">Хобби: Программирование, радиодело, занятие спортом<br>
-			Год рождения: {{age}} </p>
-		</div>
-		<div class="clr"></div>
-	</div>
-	<div class="footer">
-		<div class="icon">
-			<img src="{% static 'img/facebook.png'%}" alt="facebook" title="Facebook">
-			<img src="{% static 'img/twitter.png'%}" alt="twitter" title="Twitter">
-			<img src="{% static 'img/youtube.png'%}" alt="youtube" title="Youtube">
-			<img src="{% static 'img/pinterest.png'%}" alt="pinterest" title="Pinterest">
-			<img src="{% static 'img/insta.png'%}" alt="instagram" title="Instagram">
-		</div>
-		<p>&#169; &laquo;Все права защищены&#187;</p>
-		
-	</div>
+{% block content %}
+	<!-- <div class="welcome"><h1>Добро пожаловать на хитовый сайт!</h1></div> -->
+	<div class="foto"><img src="{% static 'img/Its_me.png'%}" alt="Упс" title="Фото"></div>
 
-</div>
+	<p class="content_name">{{name|title}} <br> {{second_name|title}}</p>
+	<!-- <hr> -->
+	<p class="content_info">Год рождения: {{age|date:"Y"}} </p>
+	<p class="content_info">Хобби:
+	{% if hobby %}
+		{% for item in hobby %}
+		{{item}}
+	{%endfor%}
+	{%else%}
+		<p class="content_info">Нету время для хобби</p>
+	{% endif %}
 
-
-
-
-
-</body>
-</html>
+	</p>
+{% endblock %}

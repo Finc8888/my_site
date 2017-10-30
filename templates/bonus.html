@@ -1,50 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Клевый сайт</title>
-	<link rel="stylesheet" href="/static/css/normalize.css">
-	<link href="/static/css/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="/static/css/style.css">
-</head>
-<body>
-<div class="all">
-<div class="container">
-		<div class="header">
-			<ul class="list">
-				<li><div class="menu"><a href="/">Главная</a></div></li>
-				<li><div class="menu"><a href="/study">Учеба</a></div class="menu"></li>
-				<li><div class="menu"><a href="/work">Работа</a></div></li>	
-			</ul>	
+{% extends "base.html" %}
+{% load staticfiles %}
 
-		<!-- 	<h1>Дарк Вэйдер</h1> -->
+{% block extend_style %}
+	<link href="/static/css/css/bootstrap.min.css" rel="stylesheet"> 
+{% endblock %}
+
+{% block menu %}
+	<li><div class="menu"><a href="/">Главная</a></div></li>
+	<li><div class="menu"><a href="/study">Учеба</a></div class="menu"></li>
+	<li><div class="menu"><a href="/work">Работа</a></div></li>	
+{% endblock %}
+
+{% block content %}
+    <p>{{ value|date:"D d M Y P" }}</p>	
+	<div class="foto"><img src = "{% static 'img/bonus.jpg'%}" alt="Упс" title="Фото"></div>
 		</div>
-		<div class="content">
-		
-			<div class="foto"><img src="/static/img/bonus.jpg" alt="Упс" title="Фото"></div>
-		</div>
-		<button type="button" class="btn btn-primary btn-lg btn-block">Перейти на сторону темной силы?</button>
-		<button type="button" class="btn btn-default btn-lg btn-block">Отказаться</button>
-</div>
-	<div class="footer">
-		<p>&#169; &laquo;Все права защищены&#187;</p>
-		<div class="icon">
-			<img src="/static/img/facebook.png" alt="facebook" title="Facebook">
-			<img src="/static/img/twitter.png" alt="twitter" title="Twitter">
-			<img src="/static/img/youtube.png" alt="youtube" title="Youtube">
-			<img src="/static/img/pinterest.png" alt="pinterest" title="Pinterest">
-			<img src="/static/img/insta.png" alt="instagram" title="Instagram">
-		</div>
-	</div>
-
-
-<div>
-
-
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="/static/css/js/bootstrap.min.js">	</script>
-</body>
-</html>
+	<button type="button" class="btn btn-primary btn-lg btn-block">Перейти на сторону темной силы?</button>
+	<button type="button" class="btn btn-default btn-lg btn-block">Отказаться</button>
+{% endblock %}	

@@ -1,51 +1,24 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-	<meta charset="UTF-8">
-	<title>Клевый сайт</title>
-	<link rel="stylesheet" href="/static/css/normalize.css">
-	<link rel="stylesheet" href="/static/css/style.css">
-</head>
-<body>
-<div class="all">
-	<div class="container">
-		<div class="header">
-			<ul class="list">
-					<li><div class="menu"><a href="/">Главная</a></div class="menu"></li>
-					<li><div class="menu"><a href="/study">Учеба</a></div></li>
-					<li><div class="menu"><a href="/bonus">Бонус</a></div></li>
-			</ul>	
+{% extends "base.html" %}
+{% load staticfiles %}
 
-			
-			<!-- <p>Подробнее об работе...</p> -->
-		</div>
-		<div class="content">
-			<div class="foto"><img src="/static/img/work.jpg" alt="Упс" title="Фото"></div>
-			<p class="content_name">Места моей будущей работы </p>
-			<ul>
-			{% if place_work %}
-				{% for work in place_work %}
-				<li class="content_info">{{work}}</li>
-			{%endfor%}
-			{%else%}
-				<p class="content_info">Неопределился с будущей работой</p>
-			{% endif %}
-			</ul>
-			
-		</div>
-		<div class="clr"></div>
-		</div>
-		<div class="footer">
-		<div class="icon">
-				<img src="/static/img/facebook.png" alt="facebook" title="Facebook">
-				<img src="/static/img/twitter.png" alt="twitter" title="Twitter">
-				<img src="/static/img/youtube.png" alt="youtube" title="Youtube">
-				<img src="/static/img/pinterest.png" alt="pinterest" title="Pinterest">
-				<img src="/static/img/insta.png" alt="instagram" title="Instagram">
-			</div>
-			<p>&#169; &laquo;Все права защищены&#187;</p>
-			
-	</div>
-</div>
-</body>
-</html>
+{% block menu %}
+	<li><div class="menu"><a href="/">Главная</a></div class="menu"></li>
+	<li><div class="menu"><a href="/study">Учеба</a></div></li>
+	<li><div class="menu"><a href="/bonus">Бонус</a></div></li>
+{% endblock %}
+
+{% block content %}
+	<div class="foto"><img src = "{% static 'img/work.jpg'%}" alt="Упс" title="Фото"></div>
+	<p class="content_name">Места моей будущей работы </p>
+	<ul>
+	{% if place_work %}
+		{% for work in place_work %}
+		<li class="content_info">{{work}}</li>
+	{%endfor%}
+	{%else%}
+		<p class="content_info">Неопределился с будущей работой</p>
+	{% endif %}
+	</ul>
+{% endblock %}	
+
+		
