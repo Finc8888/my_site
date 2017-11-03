@@ -14,14 +14,15 @@
 
 	<p class="content_name">{{name|title}} <br> {{second_name|title}}</p>
 	<!-- <hr> -->
-	<p class="content_info">Год рождения: {{age|date:"Y"}} </p>
+	<!-- <p class="content_info">Год рождения: {{age|date:"Y"}} </p> -->
+	<p class="content_info">Год рождения: {{age.year}} </p>
 	<p class="content_info">Хобби:
 	{% if hobby %}
 		{% for item in hobby %}
 		{{item}}
 	{%endfor%}
 	{%else%}
-		<p class="content_info">Нету время для хобби</p>
+		<span class="content_info">Нету времени для хобби</span>
 	{% endif %}
 
 	</p>
