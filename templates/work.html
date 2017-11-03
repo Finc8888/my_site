@@ -2,9 +2,9 @@
 {% load staticfiles %}
 
 {% block menu %}
-	<li><div class="menu"><a href="/">Главная</a></div class="menu"></li>
-	<li><div class="menu"><a href="/study">Учеба</a></div></li>
-	<li><div class="menu"><a href="/bonus">Бонус</a></div></li>
+	<li><div class="menu"><a href={% url "index" %}>Главная</a></div class="menu"></li>
+	<li><div class="menu"><a href={% url "study" %}>Учеба</a></div></li>
+	<li><div class="menu"><a href={% url "bonus" %}>Бонус</a></div></li>
 {% endblock %}
 
 {% block content %}
