@@ -8,8 +8,14 @@
 {% endblock %}
 
 {% block content %}
-	<div class="foto"><img src = "{% static 'img/dgtu.jpg'%}" alt="Упс" title="Фото"></div>
-	<p class="content_info">Окончил ДГТУ в 2016 году по специальности:<br> "Автоматизация технологических процессов и производств" </p>
+	
+	{% if where %}
+		<div class="foto"><img src = "{% static 'img/dgtu.jpg'%}" alt="Упс" title="Университет"></div>
+		<p class="content_info">Окончил {{where}} в {{when.year}} году по специальности: "{{what}}" </p>
+	{%else%}
+		<span class="content_info">Нигде не учился</span>
+	{% endif %}
+	
 {% endblock %}	
 
 

@@ -2,9 +2,12 @@ from django.shortcuts import render
 from django.shortcuts import render_to_response
 import datetime
 
+from .models import Organization
 from .models import Work
 from .models import Hobby
 from .models import Master
+from .models import Study
+
 # Create your views here.
 def main(request):
 	# hobby = ['программирование','радиодело', 'занятия спортом']
@@ -16,7 +19,12 @@ def main(request):
 	return render_to_response('index.html', {'hobby': hobby,'age':age,'name':name, 
 		'second_name':second_name, })
 def study(request):
-	return render_to_response("study.html")
+	my_study = Study.objects.all()
+	print(my_study)
+	where = my_study[0].name
+	when = my_study[0].date_end
+	what = my_study[0].facultet
+	return render_to_response('study.html', {my_study:'my_study','where': where,'when':when,'what':what })
 def work(request):
 	# place_work = ['Google','Samsung', 'Mail.ru', 'Яндекс']
 	place_work = Work.objects.all()
