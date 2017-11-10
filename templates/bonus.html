@@ -8,7 +8,8 @@
 {% block menu %}
 	<li><div class="menu"><a href={% url "index" %}>Главная</a></div></li>
 	<li><div class="menu"><a href={% url "study" %}>Учеба</a></div class="menu"></li>
-	<li><div class="menu"><a href={% url "work" %}>Работа</a></div></li>	
+	<li><div class="menu"><a href={% url "work" %}>Работа</a></div></li>
+	<li><div class="menu"><a href={% url "contact:index" %}>Контакты</a></div></li>	
 {% endblock %}
 
 {% block content %}

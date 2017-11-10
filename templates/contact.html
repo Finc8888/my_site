@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block menu %}
+	<li><div class="menu"><a href={% url "index" %}>Главная</a></div class="menu"></li>
+	<li><div class="menu"><a href={% url "work" %}>Работа</a></div></li>
+	<li><div class="menu"><a href={% url "bonus" %}>Бонус</a></div></li>
+	<li><div class="menu"><a href={% url "study" %}>Учеба</a></div></li>
+{% endblock %}
+
+{% block content %}
+	
+	<h2>Напишите нам:</h2>
+	    <form class="main-form" action="handler.php" method="POST">
+	        <fieldset>
+		        <legend>Введите ваши данные:</legend> 
+			    <div>
+			            <label for="name">Имя:</label>
+			        	<input id="name" type="text" placeholder="Введите свое имя" required>
+			    </div>
+			    <div>
+			            <label for="rad1">Пол:
+					        <input id="rad1" type="radio" name="radio_1" value="Man" required>Мужской
+					    </label>
+					    <label for="rad2">
+					        <input id="rad2" type="radio" name="radio_1" value="Woman" required>Женский
+			        	</label>
+			    </div>
+			    <div>
+			            <label>E-mail:
+			        	    <input type="email" placeholder="Введите ваш e-mail" required>
+			        	</label> 
+			    </div>
+			    <div>
+			            <label>Адрес проживания:
+			        	    <input type="text" placeholder="Введите город,улицу и дом" required>
+			        	</label>    
+			    </div>
+		    </fieldset> 
+		    <div>
+		    	<input type="submit" value="Отправить">
+		    	<input type="reset" value="Очистить">
+		    </div><br>   
+	        <div>
+	            <label for="tema">Тема:</label>
+	        	<input id="tema" type="text" placeholder="Введите тему комментария">
+	        </div>
+	    </form>
+	    <div>
+	    	<textarea name="commit" id="commit" cols="120" rows="20" placeholder="Введите Ваш комментарий"></textarea>
+		</div>
+	    <h2>Наш адрес:</h2>
+	    <p>
+	        <i>
+		        Тел:<b>8(908)5072191</b>&nbsp;&nbsp; e-mail: <b>garkusha@mail.ru</b>&nbsp;&nbsp;  Адрес: <b>г.Батайск пер.Братский 21</b>&nbsp;&nbsp;Адрес в VK: <a href="https://vk.com/exoticavdome">https://vk.com/exoticavdome</a>
+		        
+	        </i>
+	    </p>
+	    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2713.3263837723453!2d39.7608041156147!3d47.15146177915707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40e3bc9084addbb9%3A0xfe861d822a3aa8a1!2z0JHRgNCw0YLRgdC60LjQuSDQv9C10YAuLCDQkdCw0YLQsNC50YHQuiwg0KDQvtGB0YLQvtCy0YHQutCw0Y8g0L7QsdC7LiwgMzQ2ODgz!5e0!3m2!1sru!2sru!4v1489483138047" width="600" height="450"  allowfullscreen></iframe>
+	
+{% endblock %}	

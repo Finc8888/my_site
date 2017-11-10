@@ -166,3 +166,21 @@ body {
 	justify-content:center;
 }
 
+// .main-form input[type="text"],
+// .main-form input[type="email"] {
+// 	width: 320px;
+// 	height: 30px;
+// 	border-radius: 5px;
+// 	color: navy;
+// 	font-size:18px;
+// 	font-style:italic;
+// 	margin: 10px;
+// 	margin-left: 10px;
+// }
+// .main-form input[type="text"],textarea:focus {
+//     text-transform: capitalize;
+// }
+// .main-form input[type="email"]:focus {/* Псевдоклассом меняем стиль ввода email */
+// 	color:rgb(162, 34, 93);
+// 	background-color:rgba(43, 214, 222, 0.3);
+// }
