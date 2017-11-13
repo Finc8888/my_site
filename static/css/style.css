@@ -58,7 +58,7 @@ body {
 
 .menu {
 	width: 200px;
-	margin-right:150px;
+	margin-right:100px;
 	border: 1px solid navy;
 	border-radius: 10px;
 	display:flex;
@@ -184,3 +184,29 @@ body {
 // 	color:rgb(162, 34, 93);
 // 	background-color:rgba(43, 214, 222, 0.3);
 // }
+.logo{
+	display: flex;
+	flex-direction: row;
+	/*height: 100%;*/
+	align-items:center;
+	justify-content: center;
+	border:5px solid gray;
+	background-color: #87B6C4;
+	
+}
+.wrap{
+	display: flex;
+	flex-direction: column;
+	/*height: 100%;*/
+	align-items:center;
+	justify-content: center;
+	border:5px solid gray;
+	
+}
+.wrap img{
+	margin: 0 auto;
+	min-width: 100%;
+	// min-height: 100%;
+	// width :200px;
+	height : 200px;
+}

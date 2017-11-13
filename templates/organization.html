@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block menu %}
+	<li><div class="menu"><a href={% url "index" %}>Главная</a></div class="menu"></li>
+	<li><div class="menu"><a href={% url "study" %}>Учеба</a></div></li>
+	<li><div class="menu"><a href={% url "bonus" %}>Бонус</a></div></li>
+	<li><div class="menu"><a href={% url "contact:index" %}>Контакты</a></div></li>
+{% endblock %}
+
+{% block content %}
+	
+	
+		<p class="content_info">{{org}}</p>
+	
+{% endblock %}	

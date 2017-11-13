@@ -17,14 +17,22 @@
 	<!-- <hr> -->
 	<!-- <p class="content_info">Год рождения: {{age|date:"Y"}} </p> -->
 	<p class="content_info">Год рождения: {{age.year}} </p>
-	<p class="content_info">Хобби:
+	<p class="content_info">Хобби:</p>
+	<div class="logo">
 	{% if hobby %}
-		{% for item in hobby %}
-		{{item}}
+		{% for i, j in wrap %}
+			<div class="wrap">
+				<img src ="{{j.image.url}}">
+				<p class="content_info">{{i}}</p>
+			</div>
+	
+		<!-- {{item}} -->
 	{%endfor%}
+	</div>
 	{%else%}
 		<span class="content_info">Нету времени для хобби</span>
 	{% endif %}
 
-	</p>
+	
+
 {% endblock %}

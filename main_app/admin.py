@@ -6,8 +6,10 @@ from .models import Work
 from .models import Hobby
 from .models import Master
 from .models import Study
+# from .models import Logo
 admin.site.register(Organization)
 admin.site.register(Work)
 admin.site.register(Hobby)
 admin.site.register(Master)
 admin.site.register(Study)
+# admin.site.register(Logo)

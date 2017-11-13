@@ -16,6 +16,8 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from main_app.views import *
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -25,3 +27,6 @@ urlpatterns = [
     url(r'^bonuss/$', bonus,name = 'bonus'),
     url(r'^contact/', include('contact.urls',namespace = 'contact')),
 ]
+if settings.DEBUG:
+    #static files(images, css, js, etc.)
+    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
