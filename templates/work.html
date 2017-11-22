@@ -14,7 +14,7 @@
 	<ul>
 	{% if place_work %}
 		{% for work in place_work %}
-		<li class="content_info">{{work}}</li>
+		<li class="content_info"><a href="{% url 'work_detail' pk=work.pk %}">{{work}}</a></li>
 	{%endfor%}
 	{%else%}
 		<p class="content_info">Неопределился с будущей работой</p>
@@ -22,4 +22,4 @@
 	</ul>
 {% endblock %}	
 
-		
+	
