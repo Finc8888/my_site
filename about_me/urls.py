@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^study/$', study,name = 'study'),
     url(r'^bonuss/$', bonus,name = 'bonus'),
     url(r'^contact/', include('contact.urls',namespace = 'contact')),
+    url(r'^work/(?P<pk>\d+)/$', views.work_detail, name='work_detail'),
 ]
 if settings.DEBUG:
     #static files(images, css, js, etc.)
