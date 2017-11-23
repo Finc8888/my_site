@@ -42,5 +42,5 @@ def bonus(request):
 	value = datetime.datetime.now()
 	return render_to_response("bonus.html", {'value': value})
 def work_detail(request, pk):
-    work = get_object_or_404(Post, pk=pk)
-    return render(request, 'about_me/work_detail.html', {'work': work})
+    work = get_object_or_404(Work, pk=pk)
+    return render(request, 'work_detail.html', {'work': work})

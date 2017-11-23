@@ -104,7 +104,19 @@ body {
 	width: 1000px;*/
 	/*margin:auto;*/
 }
+.content_info a {
+	color:white;
+	font-family: 'Merriweather',serif;
+	font-size:30px;
+	list-style-type:none;
+	cursor: pointer;
+	text-decoration: none;	
+}
+.content_info a:hover {
+	color:gray;
+	font-size:40px;
 
+}
 .foto {
 	/*margin:0 auto;*/
 }
