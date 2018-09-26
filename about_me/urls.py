@@ -18,6 +18,7 @@ from django.contrib import admin
 from main_app.views import *
 from django.conf import settings
 from django.conf.urls.static import static
+from main_app import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -26,6 +27,7 @@ urlpatterns = [
     url(r'^study/$', study,name = 'study'),
     url(r'^bonuss/$', bonus,name = 'bonus'),
     url(r'^contact/', include('contact.urls',namespace = 'contact')),
+    url(r'^work/(?P<pk>\d+)/$', views.work_detail, name='work_detail'),
 ]
 if settings.DEBUG:
     #static files(images, css, js, etc.)

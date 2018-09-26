@@ -7,6 +7,7 @@ from .models import Work
 from .models import Hobby
 from .models import Master
 from .models import Study
+from django.shortcuts import get_object_or_404
 # from .models import Logo
 
 # Create your views here.
@@ -40,3 +41,6 @@ def work(request):
 def bonus(request):
 	value = datetime.datetime.now()
 	return render_to_response("bonus.html", {'value': value})
+def work_detail(request, pk):
+    work = get_object_or_404(Work, pk=pk)
+    return render(request, 'work_detail.html', {'work': work})
